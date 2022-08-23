@@ -15,7 +15,8 @@ runs:
     - uses: action/checkout@2
       with:
        ref: main
-       repository: TeddyBrod/Composite-action 
+       repository: TeddyBrod/Composite-action
+       token: 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
     
     - run: echo Hello ${{ inputs.who-to-greet }}.
       shell: bash
