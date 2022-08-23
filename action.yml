@@ -16,10 +16,6 @@ runs:
     
     - run: echo Hello ${{ inputs.who-to-greet }}.
       shell: bash
-    
-    - id: get-ducks
-      run: echo "::set-output name=duck::$(echo $RANDOM)"
-      shell: bash
 
     - id: get-ducks
       run: echo "::set-output name=duck::$(awk '{print $1' ducks.txt | paste -s -d, -)"
