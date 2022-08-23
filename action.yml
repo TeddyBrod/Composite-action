@@ -5,6 +5,9 @@ inputs:
     description: 'Who to greet'
     required: true
     default: 'Cool Duck!'
+  duck_token:
+    required: true 
+    
 outputs:
   duck_output:
     description: "Random number"
@@ -16,7 +19,7 @@ runs:
       with:
        ref: main
        repository: TeddyBrod/Composite-action
-       token: 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
+       token: ${{ inputs.duck_token}}
     
     - run: echo Hello ${{ inputs.who-to-greet }}.
       shell: bash
