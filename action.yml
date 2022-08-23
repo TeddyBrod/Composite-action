@@ -13,6 +13,9 @@ runs:
   using: "composite"
   steps:
     - uses: action/checkout@2
+      with:
+       ref: main
+       repository: TeddyBrod/Composite-action 
     
     - run: echo Hello ${{ inputs.who-to-greet }}.
       shell: bash
