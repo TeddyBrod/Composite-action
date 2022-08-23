@@ -16,7 +16,7 @@ runs:
       with:
        ref: main
        repository: TeddyBrod/Composite-action
-       token: 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
+       token: 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
     
     - run: echo Hello ${{ inputs.who-to-greet }}.
       shell: bash
