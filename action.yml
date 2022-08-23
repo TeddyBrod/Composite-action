@@ -6,15 +6,21 @@ inputs:
     required: true
     default: 'Cool Duck!'
 outputs:
-  random-number:
+  duck_output:
     description: "Random number"
-    value: ${{ steps.random-number-generator.outputs.random-number }}
+    value: ${{ steps.get-ducks.outputs.duck }}
 runs:
   using: "composite"
   steps:
+    - uses: action/checkout@2
+    
     - run: echo Hello ${{ inputs.who-to-greet }}.
       shell: bash
-    - id: random-number-generator
-      run: echo "::set-output name=random-number::$(echo $RANDOM)"
+    
+    - id: get-ducks
+      run: echo "::set-output name=duck::$(echo $RANDOM)"
       shell: bash
 
+    - id: get-ducks
+      run: echo "::set-output name=duck::$(awk '{print $1' ducks.txt | paste -s -d, -)"
+      shell: bash
